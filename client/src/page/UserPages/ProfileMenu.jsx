@@ -31,7 +31,7 @@ const ProfileMenu = () => {
   return (
     <div>
         <div className="mt-36 -mb-32">
-            <div className="w-full flex">
+            <div className="w-full flex py-4 ">
                 {
                     menuprofile.map((menu, index) => {
                         return (
