@@ -13,11 +13,7 @@ const Posts = () => {
     ]
   return (
     <div>
-        <DefaultInput placeholder={"Placeholder"}/>
-        <br /><br />
-        <DefaultTextArea placeholder={"Text Area Placeholder"} />
-        <br /><br />
-        <DefualtSelect inputoption={inputoption} defultinput={"Select Option"}/>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, magni eveniet quo eaque nisi nihil sit sequi inventore itaque dolorem, illum culpa dignissimos doloremque ea perspiciatis laborum fugiat error? Reprehenderit.
     </div>
   )
 }
