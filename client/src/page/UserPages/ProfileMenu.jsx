@@ -15,17 +15,17 @@ const ProfileMenu = () => {
         {
             id: 3,
             name: "Friends",
-            link: "#"
+            link: "/Friends"
         },
         {
             id: 4,
             name: "Photos",
-            link: "#"
+            link: "/Photos"
         },
         {
             id: 5,
             name: "Birth Days",
-            link: "#"
+            link: "/Brithdays"
         },
     ]
   return (

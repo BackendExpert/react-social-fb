@@ -8,6 +8,9 @@ import Home from './page/HomePage/Home';
 import Nav from './components/Nav/Nav';
 import AboutMe from './page/AboutMe/AboutMe';
 import Posts from './page/Posts/Posts';
+import Friends from './page/Friends/Friends';
+import Photos from './page/Photos/Photos';
+import Brithdays from './page/BirthDays/Brithdays';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -59,6 +62,9 @@ function App() {
         <Route path='/' element={<Home /> } >
           <Route path='/' element={<Posts /> } />
           <Route path='Aboutme' element={<AboutMe /> } />
+          <Route path='Friends' element={<Friends /> } />
+          <Route path='Photos' element={<Photos /> } />
+          <Route path='Brithdays' element={<Brithdays /> } />
         </Route>
       </Routes>
     </BrowserRouter>
