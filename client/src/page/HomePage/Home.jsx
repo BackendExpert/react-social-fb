@@ -1,6 +1,8 @@
 import React from 'react'
 import UserCover from '../UserPages/UserCover'
 import ProfileImgUser from '../UserPages/ProfileImgUser'
+import { Outlet } from 'react-router-dom'
+import ProfileMenu from '../UserPages/ProfileMenu'
 
 const Home = () => {
   return (
@@ -15,8 +17,12 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <div className="">
+            <ProfileMenu />
+        </div>
+
         <div className="mt-36 border-t border-gray-300 pt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia vitae libero beatae inventore magni, eaque voluptas debitis repellendus aliquid. Pariatur unde odit velit sed ullam ducimus consectetur, maxime provident!
+            <Outlet />
         </div>
     </div>
 

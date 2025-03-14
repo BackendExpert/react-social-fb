@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/HomePage/Home';
 import Nav from './components/Nav/Nav';
+import AboutMe from './page/AboutMe/AboutMe';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -55,7 +56,7 @@ function App() {
         )}
       <Routes>
         <Route path='/' element={<Home /> } >
-          
+          <Route path='Aboutme' element={<AboutMe /> } />
         </Route>
       </Routes>
     </BrowserRouter>
