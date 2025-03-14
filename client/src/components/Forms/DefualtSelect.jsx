@@ -24,7 +24,7 @@ const DefualtSelect = ({ inputoption, defultinput, onChange, required }) => {
         {
             inputoption.map((opt, index) => {
                 return (
-                    <option value={opt.value}>{opt.value}</option>
+                    <option value={opt.value} key={index}>{opt.value}</option>
                 )
             })
         }
