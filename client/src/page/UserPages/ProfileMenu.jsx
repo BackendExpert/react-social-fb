@@ -35,7 +35,7 @@ const ProfileMenu = () => {
                 {
                     menuprofile.map((menu, index) => {
                         return (
-                            <div className="mx-8 text-gray-500 font-semibold" key={index}>
+                            <div className="mx:mx-8 mx-2 text-gray-500 font-semibold" key={index}>
                                 <a href="" className='duration-500 hover:text-blue-500'>
                                     <div className="">{menu.name}</div>
                                 </a>
