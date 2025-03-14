@@ -5,12 +5,12 @@ const ProfileMenu = () => {
         {
             id: 1,
             name: "Post",
-            link: "#"
+            link: "/"
         },
         {
             id: 2,
             name: "About",
-            link: "#"
+            link: "/Aboutme"
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ const ProfileMenu = () => {
                     menuprofile.map((menu, index) => {
                         return (
                             <div className="mx:mx-8 mx-2 text-gray-500 font-semibold" key={index}>
-                                <a href="" className='duration-500 hover:text-blue-500'>
+                                <a href={menu.link} className='duration-500 hover:text-blue-500'>
                                     <div className="">{menu.name}</div>
                                 </a>
                             </div>

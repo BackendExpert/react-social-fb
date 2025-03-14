@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/HomePage/Home';
 import Nav from './components/Nav/Nav';
 import AboutMe from './page/AboutMe/AboutMe';
+import Posts from './page/Posts/Posts';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -56,6 +57,7 @@ function App() {
         )}
       <Routes>
         <Route path='/' element={<Home /> } >
+          <Route path='/' element={<Posts /> } />
           <Route path='Aboutme' element={<AboutMe /> } />
         </Route>
       </Routes>
