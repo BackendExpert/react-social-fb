@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileData from './ProfileData'
 import AllPhotos from './AllPhotos'
+import NineFriends from './NineFriends'
 
 const Posts = () => {
   return (
@@ -15,6 +16,9 @@ const Posts = () => {
                 </div>
                 <div className="border-b border-gray-300 pb-4 bg-white rounded-md shadow-md py-4 my-4">
                     <AllPhotos />
+                </div>
+                <div className="border-b border-gray-300 pb-4 bg-white rounded-md shadow-md py-4 my-4">
+                    <NineFriends />
                 </div>
             </div>
             <div className="md:mt-0 mt-4 xl:w-2/3 md:w-1/2">

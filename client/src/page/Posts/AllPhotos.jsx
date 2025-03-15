@@ -33,8 +33,7 @@ const AllPhotos = () => {
                     </div>
                     <div className="">
                         <img src="https://wallpapercave.com/wp/wp2707503.jpg" alt="" className='md:h-40 h-28 w-auto'/>
-                    </div>
-    
+                    </div>   
                     
                 </div>
             </div>
