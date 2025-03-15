@@ -26,7 +26,7 @@ const Home = () => {
 
             </div>
 
-            <div className=" xl:px-24 md:px-10 px-4 h-screen mt-36 bg-gray-200 border-t border-gray-300 pt-4">
+            <div className=" xl:px-24 md:px-10 px-4 min-h-screen mt-36 bg-gray-200 border-t border-gray-300 pt-4">
                 <Outlet />
             </div>
         </div>
