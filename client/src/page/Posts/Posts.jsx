@@ -2,6 +2,7 @@ import React from 'react'
 import ProfileData from './ProfileData'
 import AllPhotos from './AllPhotos'
 import NineFriends from './NineFriends'
+import DefaultPost from '../../components/Post/DefaultPost'
 
 const Posts = () => {
   return (
@@ -21,8 +22,8 @@ const Posts = () => {
                     <NineFriends />
                 </div>
             </div>
-            <div className="md:mt-0 mt-4 xl:w-2/3 md:w-1/2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta soluta optio quam ducimus. Quas odit necessitatibus, nisi enim similique pariatur perferendis obcaecati iure, reprehenderit excepturi esse, ex consequuntur delectus dolor!
+            <div className="md:mt-0 mt-4 xl:w-2/3 md:w-1/2 md:pb-0 pb-4">
+                <DefaultPost />
             </div>
         </div>
     </div>
