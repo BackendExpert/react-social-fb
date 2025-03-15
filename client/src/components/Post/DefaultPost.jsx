@@ -14,11 +14,12 @@ const DefaultPost = () => {
             </div>
             <div className="mt-2"><BsThreeDots /></div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 pb-4">
             <p className="">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae vel porro corporis asperiores, id numquam labore nulla, vero ut consequatur eaque aperiam officia est quaerat excepturi. A ab repudiandae nam?
             </p>
         </div>
+        <div className="border-t border-gray-200"></div>
     </div>
   )
 }
