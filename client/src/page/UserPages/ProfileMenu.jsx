@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProfileMenu = () => {
     const menuprofile = [
@@ -36,9 +37,11 @@ const ProfileMenu = () => {
                     menuprofile.map((menu, index) => {
                         return (
                             <div className="mx:mx-8 mx-2 text-gray-500 font-semibold" key={index}>
-                                <a href={menu.link} className='duration-500 hover:text-blue-500'>
-                                    <div className="">{menu.name}</div>
-                                </a>
+                                <div className="duration-500 hover:text-blue-500">
+                                    <Link to={menu.link}>
+                                        <div className="">{menu.name}</div>
+                                    </Link>
+                                </div>
                             </div>
                         )
                     })
