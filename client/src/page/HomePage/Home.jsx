@@ -3,6 +3,7 @@ import UserCover from '../UserPages/UserCover'
 import ProfileImgUser from '../UserPages/ProfileImgUser'
 import { Outlet } from 'react-router-dom'
 import ProfileMenu from '../UserPages/ProfileMenu'
+import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
     return (
@@ -28,6 +29,10 @@ const Home = () => {
 
             <div className=" xl:px-24 md:px-10 px-4 min-h-screen mt-36 bg-gray-200 border-t border-gray-300 pt-4">
                 <Outlet />
+            </div>
+
+            <div className="xl:px-24 md:px-10 px-4">
+                <Footer />
             </div>
         </div>
     )
