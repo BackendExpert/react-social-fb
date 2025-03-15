@@ -6,7 +6,7 @@ const UpdateAboutMe = () => {
         name: '',
         works: '',
         studies: '',
-        live: '',
+        livein: '',
         from: '',
         status: '',
     })
@@ -31,7 +31,7 @@ const UpdateAboutMe = () => {
   return (
     <div className='bg-white p-4 rounded-lg shadow-md'>
         <form onSubmit={headleUpdateData} method="post">
-            <div className="">
+            <div className="my-4">
                 <DefaultInput 
                     type={'text'}
                     name={'name'}
@@ -40,6 +40,52 @@ const UpdateAboutMe = () => {
                     onChange={handleInputChange}
                 />
             </div>
+            <div className="my-4">
+                <DefaultInput 
+                    type={'text'}
+                    name={'works'}
+                    value={updatedata.works}
+                    placeholder={"Works At"}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="my-4">
+                <DefaultInput 
+                    type={'text'}
+                    name={'studies'}
+                    value={updatedata.studies}
+                    placeholder={"Study At"}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="my-4">
+                <DefaultInput 
+                    type={'text'}
+                    name={'livein'}
+                    value={updatedata.livein}
+                    placeholder={"Live In"}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="my-4">
+                <DefaultInput 
+                    type={'text'}
+                    name={'from'}
+                    value={updatedata.from}
+                    placeholder={"From"}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="my-4">
+                <DefaultInput 
+                    type={'text'}
+                    name={'status'}
+                    value={updatedata.status}
+                    placeholder={"Status"}
+                    onChange={handleInputChange}
+                />
+            </div>
+            
         </form>
     </div>
   )
