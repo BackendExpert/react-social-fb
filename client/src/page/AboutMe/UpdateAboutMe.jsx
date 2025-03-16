@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DefaultInput from '../../components/Forms/DefaultInput';
+import DefultBtn from '../../components/Buttons/DefultBtn';
 
 const UpdateAboutMe = () => {
     const [updatedata, setupdatedata] = useState({
@@ -83,6 +84,14 @@ const UpdateAboutMe = () => {
                     value={updatedata.status}
                     placeholder={"Status"}
                     onChange={handleInputChange}
+                />
+            </div>
+
+
+            <div className="">
+                <DefultBtn 
+                    type={'submit'}
+                    btnvalue={'Update About Me'}
                 />
             </div>
             
