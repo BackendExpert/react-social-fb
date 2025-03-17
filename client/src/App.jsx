@@ -11,6 +11,8 @@ import Posts from './page/Posts/Posts';
 import Friends from './page/Friends/Friends';
 import Photos from './page/Photos/Photos';
 import Brithdays from './page/BirthDays/Brithdays';
+import Signin from './page/auth/Signin';
+import SignUp from './page/auth/SignUp';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -59,6 +61,8 @@ function App() {
           </div>
         )}
       <Routes>
+        <Route path='/sign-in' element={<Signin /> } />
+        <Route path='/sign-up' element={<SignUp /> } />
         <Route path='/' element={<Home /> } >
           <Route path='/' element={<Posts /> } />
           <Route path='Aboutme' element={<AboutMe /> } />
