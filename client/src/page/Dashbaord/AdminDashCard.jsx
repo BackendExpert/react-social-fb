@@ -7,24 +7,26 @@ const admindata = [
         id: 1,
         name: 'Users',
         icon: FaUsers,
-        value: '',
+        value: 500,
     },
     {
         id: 2,
         name: 'Reported Users',
         icon: MdReport,
-        value: '',
+        value: 500,
     },
     {
         id: 3,
         name: 'Today Joined',
         icon: MdToday,
-        value: '',
+        value: 500,
     },
     {
         id: 4,
         name: 'Total Admins',
         icon: MdAdminPanelSettings,
-        value: '',
+        value: 500,
     },
 ]
+
+export {admindata}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import userImg from '../../assets/user.png'
 import axios from "axios";
 import { MdWork } from "react-icons/md";
+import { FaUsers } from "react-icons/fa6";
 
 const DashSide = () => {
   const RoleUser = secureLocalStorage.getItem("loginR");
@@ -36,7 +37,7 @@ const DashSide = () => {
     <div className="w-full">
       <div className="flex ml-4">
         <div className="pt-3 pr-2">
-          <MdWork className="h-8 w-auto fill-sky-500" />
+          <FaUsers className="h-8 w-auto fill-sky-500" />
         </div>
         <h1 className="my-4 text-center font-semibold uppercase text-xl text-sky-500">
             Buddyfy Connect

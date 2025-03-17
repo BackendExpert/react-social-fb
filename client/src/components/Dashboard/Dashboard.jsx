@@ -9,6 +9,7 @@ import { TiThMenu } from "react-icons/ti";
 import { MdOutlineClose } from "react-icons/md";
 
 
+
 const Dashbaord = () => {
     const navigate = useNavigate()
     const RoleUser = secureLocalStorage.getItem('loginR')
@@ -24,7 +25,7 @@ const Dashbaord = () => {
 
     if(RoleUser !== "" || EmailUser !== "" || Username !== ""){
         return (
-            <div className='w-full bg-[#0f5a97]/10 min-h-screen'>
+            <div className='w-full bg-sky-600/10 min-h-screen'>
                 <div className="xl:flex">
                     <div
                         className={`shadow-[5px_0_15px_-5px_rgba(0,0,0,0.1)] p-4 xl:block fixed top-0 left-0 h-full bg-white shadow-custom z-50 xl:w-[19%] w-[75%] overflow-y-auto transform duration-500 ${
