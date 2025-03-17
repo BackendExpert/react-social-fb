@@ -13,6 +13,8 @@ import Photos from './page/Photos/Photos';
 import Brithdays from './page/BirthDays/Brithdays';
 import Signin from './page/auth/Signin';
 import SignUp from './page/auth/SignUp';
+import Dashbaord from './components/Dashboard/Dashboard';
+import DashHome from './page/Dashbaord/DashHome';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -69,6 +71,9 @@ function App() {
           <Route path='Friends' element={<Friends /> } />
           <Route path='Photos' element={<Photos /> } />
           <Route path='Brithdays' element={<Brithdays /> } />
+        </Route>
+        <Route path='/Dashboard/' element={<Dashbaord /> } >
+          <Route path='Home' element={<DashHome /> } />
         </Route>
       </Routes>
     </BrowserRouter>
