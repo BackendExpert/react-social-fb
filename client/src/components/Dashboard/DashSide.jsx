@@ -36,10 +36,10 @@ const DashSide = () => {
     <div className="w-full">
       <div className="flex ml-4">
         <div className="pt-3 pr-2">
-          <MdWork className="h-8 w-auto fill-[#0f5a97]" />
+          <MdWork className="h-8 w-auto fill-sky-500" />
         </div>
-        <h1 className="my-4 text-center font-semibold uppercase text-xl bg-gradient-to-r from-[#0f5a97] to-[#c0c7d0] bg-clip-text text-transparent">
-          JKITJOBS.com
+        <h1 className="my-4 text-center font-semibold uppercase text-xl text-sky-500">
+            Buddyfy Connect
         </h1>
       </div>
 
