@@ -81,25 +81,6 @@ const DashSide = () => {
                     );
                 }
             }
-            else if(RoleUser === "company"){
-                if(menu.id !== 3){
-                    return (
-                        <Link to={menu.link} key={menu.id}>
-                          <div
-                            onClick={() => currentMenu(menu.id)}
-                            className={`py-4 pl-4 cursor-pointer duration-500 flex items-center ${
-                              isActive
-                                ? "text-[#0f5a97] font-semibold"
-                                : "text-gray-400 hover:pl-6 hover:text-[#0f5a97]"
-                            }`}
-                          >
-                            <menu.icon className="h-8 w-auto" />
-                            <h1 className="pt-1 pl-4">{menu.name}</h1>
-                          </div>
-                        </Link>
-                    );
-                }
-            }
         })}
       </div>
     </div>
