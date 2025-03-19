@@ -3,8 +3,10 @@ import DefaultInput from '../../components/Forms/DefaultInput';
 import DefultBtn from '../../components/Buttons/DefultBtn';
 import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage'
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+    const navigate = useNavigate()
     const [signindata, setsignindata] = useState({
         email: '',
         password: '',
@@ -29,7 +31,7 @@ const Signin = () => {
                     localStorage.setItem("login", res.data.Token)
                     secureLocalStorage.setItem("loginE", res.data.Result.email)
                     secureLocalStorage.setItem("loginU", res.data.Result.username)
-                    secureLocalStorage.setItem("loginR", res.data.Result.role)
+                    secureLocalStorage.setItem("loginR", res.data.Result.isAdmin)
                     localStorage.setItem("dashmenuID", 1)
                     window.location.reload()
                 }
@@ -39,10 +41,9 @@ const Signin = () => {
                     localStorage.setItem("login", res.data.Token)
                     secureLocalStorage.setItem("loginE", res.data.Result.email)
                     secureLocalStorage.setItem("loginU", res.data.Result.username)
-                    secureLocalStorage.setItem("loginR", res.data.Result.role)
+                    secureLocalStorage.setItem("loginR", res.data.Result.isAdmin)
                     window.location.reload()
                 }
-
             }
             else{
                 alert(res.data.Error)
