@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import DefaultInput from '../../components/Forms/DefaultInput';
 import DefultBtn from '../../components/Buttons/DefultBtn';
+import axios from 'axios';
 
 const Signin = () => {
     const [signindata, setsignindata] = useState({
@@ -15,10 +16,18 @@ const Signin = () => {
         }));
     };
 
-    const headleUpdateData = (e) => {
+    const headleUpdateData = async (e) => {
         e.preventDefault()
         try {
-            console.log(signindata)
+            // console.log(signindata)
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/auth/signin', signindata)
+            if(res.data.Status === "Success"){
+                alert("login Success")
+            }
+            else{
+                alert(res.data.Error)
+            }
+
         }
         catch (err) {
             console.log(err)
