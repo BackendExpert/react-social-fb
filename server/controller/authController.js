@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const User = require('../models/User');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const UserActivity = require('../models/UserActivity');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -49,7 +50,19 @@ const authController = {
             const resultuser = await newuser.save()
 
             if(resultuser){
-                return res.json({ Status: "Success"})
+                const newactivity = new UserActivity({ 
+                    email: email,
+                    activity: 'User Registation'
+                })
+
+                const resultactivity = await newactivity.save()
+
+                if(resultactivity){
+                    return res.json({ Status: "Success"})
+                }
+                else{
+                    return res.json({ Error: "Internal Server Error while creating Activity"})
+                }
             }
             else{
                 return res.json({ Error: "Internal Server Error While Create User"})
