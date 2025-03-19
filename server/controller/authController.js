@@ -93,6 +93,20 @@ const authController = {
                 return res.json({ Error: "Password not Match"})
             }
 
+            const newactivity = new UserActivity({
+                email: email,
+                activity: 'User Login'
+            })
+            
+            const resultactivity = await newactivity.save()
+
+            if(resultactivity){
+                const token = jwt.sign({ id: checkuser._id, role:checkuser.role }, process.env.JWT_SECRET);
+                return res.json({ Status: "Success", Result: checkuser, Token: token })
+            }
+            else{
+                return res.json({ Error: 'Internal Server Error while creating Activity'})
+            }
             
         }
         catch(err){
