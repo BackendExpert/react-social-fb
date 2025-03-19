@@ -63,7 +63,24 @@ const authController = {
 
     signin: async(req, res) => {
         try{
+            const  {
+                email,
+                password 
+            } = req.body
 
+            const checkuser = await User.findOne({ email: email })
+            
+            if(!checkuser){
+                return res.json({ Error: "User is not Exists on System"})
+            }
+
+            const checkpass = await bcrypt.compare(checkuser.password, password)
+
+            if(!checkpass){
+                return res.json({ Error: "Password not Match"})
+            }
+
+            
         }
         catch(err){
             console.log(err)
