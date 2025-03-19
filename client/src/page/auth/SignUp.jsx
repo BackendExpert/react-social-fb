@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import DefaultInput from '../../components/Forms/DefaultInput';
 import DefultBtn from '../../components/Buttons/DefultBtn';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const [signupdata, setsignupdata] = useState({
         username: '',
         email: '',
@@ -16,10 +19,19 @@ const SignUp = () => {
         }));
     };
 
-    const headleUpdateData = (e) => {
+    const headleUpdateData = async (e) => {
         e.preventDefault()
         try {
-            console.log(signupdata)
+            // console.log(signupdata)
+
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/auth/signup', signupdata)
+            if(res.data.Status === "Success"){
+                alert("Registaion Success")
+                navigate('/sign-in')
+            }
+            else{
+                alert(res.data.Error)
+            }
         }
         catch (err) {
             console.log(err)

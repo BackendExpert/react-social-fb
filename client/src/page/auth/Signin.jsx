@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import DefaultInput from '../../components/Forms/DefaultInput';
 import DefultBtn from '../../components/Buttons/DefultBtn';
+import axios from 'axios';
+import secureLocalStorage from 'react-secure-storage'
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+    const navigate = useNavigate()
     const [signindata, setsignindata] = useState({
         email: '',
         password: '',
@@ -15,10 +19,36 @@ const Signin = () => {
         }));
     };
 
-    const headleUpdateData = (e) => {
+    const headleUpdateData = async (e) => {
         e.preventDefault()
         try {
-            console.log(signindata)
+            // console.log(signindata)
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/auth/signin', signindata)
+            if(res.data.Status === "Success"){
+                if(res.data.Result.isAdmin === true){
+                    alert("login Success")
+                    navigate('/Dashboard/Home')                    
+                    localStorage.setItem("login", res.data.Token)
+                    secureLocalStorage.setItem("loginE", res.data.Result.email)
+                    secureLocalStorage.setItem("loginU", res.data.Result.username)
+                    secureLocalStorage.setItem("loginR", res.data.Result.isAdmin)
+                    localStorage.setItem("dashmenuID", 1)
+                    window.location.reload()
+                }
+                else{
+                    alert("login Success")
+                    navigate('/')                    
+                    localStorage.setItem("login", res.data.Token)
+                    secureLocalStorage.setItem("loginE", res.data.Result.email)
+                    secureLocalStorage.setItem("loginU", res.data.Result.username)
+                    secureLocalStorage.setItem("loginR", res.data.Result.isAdmin)
+                    window.location.reload()
+                }
+            }
+            else{
+                alert(res.data.Error)
+            }
+
         }
         catch (err) {
             console.log(err)
