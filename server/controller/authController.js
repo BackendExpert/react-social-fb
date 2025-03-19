@@ -2,6 +2,8 @@ const nodemailer = require('nodemailer');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const UserActivity = require('../models/UserActivity');
+const validator = require('validator')
+const jwt = require('jsonwebtoken')
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -87,7 +89,7 @@ const authController = {
                 return res.json({ Error: "User is not Exists on System"})
             }
 
-            const checkpass = await bcrypt.compare(checkuser.password, password)
+            const checkpass = await bcrypt.compare(password, checkuser.password)
 
             if(!checkpass){
                 return res.json({ Error: "Password not Match"})
