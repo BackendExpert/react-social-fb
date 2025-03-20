@@ -27,6 +27,33 @@ const userController = {
         catch(err){
             console.log(err)
         }
+    },
+
+    updateProfileImage: async(req, res) => {
+        try{
+            const email = req.params.email;
+            const profileimg = req.file.path;
+
+            const ProfileImgeUpdate = await UserData.findOneAndUpdate(
+                { email: email },
+                { $set: { profileimg: profileimg } }, 
+                { new: true } 
+            );
+
+            if(ProfileImgeUpdate){
+                const newactivity = new UserActivity({
+                    email: email,
+                    activity: "Update Profile Image"
+                })
+
+                if(newactivity){
+                    return res.json({ Status: "Success"})
+                }
+            }
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
