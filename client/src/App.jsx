@@ -18,6 +18,7 @@ import DashHome from './page/Dashbaord/DashHome';
 import secureLocalStorage from 'react-secure-storage'
 import NonAuth from './page/HomePage/NonAuth';
 import AllPosts from './page/HomePage/AllPosts';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -73,14 +74,14 @@ function App() {
         <Route path='/sign-up' element={<SignUp />} />
         {
           login ?
-            <Route path='/' element={<AllPosts />} />
+            <Route path='/' element={ <PrivateRoute element={<AllPosts />} />} />
             :
             <Route path='/' element={<NonAuth />} />
         }
 
         {
           login ?
-            <Route path='/:username' element={<Home />} >
+            <Route path='/:username' element={<PrivateRoute element={<Home />} />} >
               <Route path='Posts' element={<Posts />} />
               <Route path='Aboutme' element={<AboutMe />} />
               <Route path='Friends' element={<Friends />} />
