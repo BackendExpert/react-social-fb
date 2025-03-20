@@ -6,27 +6,27 @@ const ProfileMenu = () => {
         {
             id: 1,
             name: "Post",
-            link: "/"
+            link: "Posts"
         },
         {
             id: 2,
             name: "About",
-            link: "/Aboutme"
+            link: "Aboutme"
         },
         {
             id: 3,
             name: "Friends",
-            link: "/Friends"
+            link: "Friends"
         },
         {
             id: 4,
             name: "Photos",
-            link: "/Photos"
+            link: "Photos"
         },
         {
             id: 5,
             name: "Birth Days",
-            link: "/Brithdays"
+            link: "Brithdays"
         },
     ]
   return (

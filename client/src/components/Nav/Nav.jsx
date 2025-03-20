@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { FaGear, FaPowerOff, FaCircleQuestion  } from "react-icons/fa6";
+import { FaGear, FaPowerOff, FaCircleQuestion } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+import secureLocalStorage from 'react-secure-storage'
 
 const Nav = () => {
+    const navigate = useNavigate()
     const [openmenu, setopenmenu] = useState(false)
 
     const togglemenu = () => {
         setopenmenu(!openmenu)
+    }
+    const login = localStorage.getItem('login')
+    const emailUser = secureLocalStorage.getItem('loginE')
+    const userName = secureLocalStorage.getItem('loginU')
+
+    const headlelogout = () => {
+        localStorage.clear()
+        navigate('/sign-in')
+        window.location.reload()
     }
 
     const menudata = [
@@ -24,20 +36,37 @@ const Nav = () => {
         {
             id: 3,
             name: 'LogOut',
-            link: '#',
+            func: headlelogout,
             icon: FaPowerOff,
         },
-        
+
     ]
 
     return (
         <div className="">
             <div className='py-6 xl:px-24 md:px-10 px-4 bg-sky-600/80 border-b border-gray-200 shadow-xl'>
                 <div className="flex justify-between text-white">
-                    <div className="font-semibold uppercase">Buddyfy Connect</div>
-                    <div className="cursor-pointer" onClick={togglemenu}>
-                        <img src="https://avatars.githubusercontent.com/u/138636749?v=4" alt="" className='h-8 rounded-full w-auto' />
-                    </div>
+                    <a href="/">
+                        <div className="font-semibold uppercase">Buddyfy Connect</div>
+                    </a>
+
+                    {
+                        login ?
+                            <div className="">
+                                <div className="cursor-pointer" onClick={togglemenu}>
+                                    <img src="https://avatars.githubusercontent.com/u/138636749?v=4" alt="" className='h-8 rounded-full w-auto' />
+                                </div>
+                            </div>
+
+                            :
+
+                            <div className="">
+                                <a href="/sign-in">
+                                    <div className="bg-blue-600 text-white py-2 px-4 rounded duration-500 hover:bg-blue-700">SignIn</div>
+                                </a>
+                            </div>
+                    }
+
                 </div>
             </div>
             <div
@@ -47,18 +76,35 @@ const Nav = () => {
                 <div className="flex flex-col">
                     {
                         menudata.map((menu, index) => {
-                            return (
-                                <a href={menu.link} key={index}>
-                                    <div className="flex">
-                                        <div className="my-2">
-                                            <menu.icon className='h-6 w-auto'/>
-                                        </div>
-                                        <div className="">
-                                            <h1 className="text-md duration-500 hover:pl-6 pt-1 pl-4 ">{menu.name}</h1>
+                            if (menu.name === "LogOut") {
+                                return (
+                                    <div className="" onClick={menu.func}>
+                                        <div className="flex">
+                                            <div className="my-2">
+                                                <menu.icon className='h-6 w-auto' />
+                                            </div>
+                                            <div className="">
+                                                <h1 className="text-md duration-500 hover:pl-6 pt-1 pl-4 ">{menu.name}</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                </a>
-                            )
+                                )
+                            }
+                            else {
+                                return (
+                                    <a href={menu.link} key={index}>
+                                        <div className="flex">
+                                            <div className="my-2">
+                                                <menu.icon className='h-6 w-auto' />
+                                            </div>
+                                            <div className="">
+                                                <h1 className="text-md duration-500 hover:pl-6 pt-1 pl-4 ">{menu.name}</h1>
+                                            </div>
+                                        </div>
+                                    </a>
+                                )
+                            }
+
                         })
                     }
                 </div>
