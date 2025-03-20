@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { FaGear, FaPowerOff, FaCircleQuestion } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 import secureLocalStorage from 'react-secure-storage'
 
 const Nav = () => {
+    const navigate = useNavigate()
     const [openmenu, setopenmenu] = useState(false)
 
     const togglemenu = () => {
@@ -14,6 +16,7 @@ const Nav = () => {
 
     const headlelogout = () => {
         localStorage.clear()
+        navigate('/sign-in')
         window.location.reload()
     }
 
