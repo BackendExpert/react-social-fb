@@ -3,7 +3,8 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const UserActivity = require('../models/UserActivity');
 const validator = require('validator')
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const UserData = require('../models/UserData');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -59,7 +60,13 @@ const authController = {
 
                 const resultactivity = await newactivity.save()
 
-                if(resultactivity){
+                const createuserData = new UserData({
+                    email: email
+                })
+
+                const resultNewUserData = await createuserData.save()
+
+                if(resultNewUserData){
                     return res.json({ Status: "Success"})
                 }
                 else{
