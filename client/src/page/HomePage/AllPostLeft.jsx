@@ -8,7 +8,7 @@ const AllPostLeft = () => {
 
     return (
         <div>
-            <a href={`/${userName}`}>
+            <a href={`/${userName}/Posts`}>
                 <div className="flex">
                     <img src="https://avatars.githubusercontent.com/u/138636749?v=4" alt="" className='h-20 w-auto rounded-full' />
                     <h1 className="text-xl font-semibold pl-2 mt-4">Jehan Weerasuriya</h1>

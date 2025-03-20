@@ -37,7 +37,7 @@ const Signin = () => {
                 }
                 else{
                     alert("login Success")
-                    navigate(`/${res.data.Result.username}`)                    
+                    navigate(`/${res.data.Result.username}/Posts`)                    
                     localStorage.setItem("login", res.data.Token)
                     secureLocalStorage.setItem("loginE", res.data.Result.email)
                     secureLocalStorage.setItem("loginU", res.data.Result.username)

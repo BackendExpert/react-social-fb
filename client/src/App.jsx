@@ -81,7 +81,7 @@ function App() {
         {
           login ?
             <Route path='/:username' element={<Home />} >
-              <Route index element={<Posts />} />
+              <Route path='Posts' element={<Posts />} />
               <Route path='Aboutme' element={<AboutMe />} />
               <Route path='Friends' element={<Friends />} />
               <Route path='Photos' element={<Photos />} />
