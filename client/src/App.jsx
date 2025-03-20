@@ -44,7 +44,7 @@ function App() {
     window.addEventListener("scroll", handleScroll);
 
 
-    return () => {
+    return () => {  
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
