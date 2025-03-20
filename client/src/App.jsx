@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import 'aos/dist/aos.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './page/HomePage/Home';
 import Nav from './components/Nav/Nav';
 import AboutMe from './page/AboutMe/AboutMe';
@@ -19,6 +19,7 @@ import secureLocalStorage from 'react-secure-storage'
 import NonAuth from './page/HomePage/NonAuth';
 import AllPosts from './page/HomePage/AllPosts';
 import PrivateRoute from './components/auth/PrivateRoute';
+
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -70,6 +71,7 @@ function App() {
         </div>
       )}
       <Routes>
+      <Route path="*" element={<Navigate to="/sign-in" />} />
         <Route path='/sign-in' element={<Signin />} />
         <Route path='/sign-up' element={<SignUp />} />
         {
@@ -82,11 +84,11 @@ function App() {
         {
           login ?
             <Route path='/:username' element={<PrivateRoute element={<Home />} />} >
-              <Route path='Posts' element={<Posts />} />
-              <Route path='Aboutme' element={<AboutMe />} />
-              <Route path='Friends' element={<Friends />} />
-              <Route path='Photos' element={<Photos />} />
-              <Route path='Brithdays' element={<Brithdays />} />
+              <Route path='Posts' element={<PrivateRoute element={<Posts />} />} />
+              <Route path='Aboutme' element={<PrivateRoute element={<AboutMe />} />} />
+              <Route path='Friends' element={<PrivateRoute element={<Friends />} />} />
+              <Route path='Photos' element={<PrivateRoute element={<Photos />} />} />
+              <Route path='Brithdays' element={<PrivateRoute element={<Brithdays />} />} />
             </Route>
             :
             <Route path='/' element={<NonAuth />} />
